@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app="myApp" ng-controller="myCtrlr" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="bower_components/angular/angular.js"></script>
+    <title>{{ pagetitle }}</title>
+</head>
+<body>
+    <button ng-click="btnclick()">Click This</button>
+    <script>
+        var app = angular.module("myApp", []);
+        app.controller("myCtrlr" , function ($scope) {
+            $scope.pagetitle = "Nice Pagetitle";
+            $scope.btnclick = function () {
+              if ($scope.pagetitle === "Nice Pagetitle")
+                  $scope.pagetitle = "Nicer Pagetitle";
+              else
+                  $scope.pagetitle = "Nice Pagetitle";
+            };
+        });
+    </script>
+</body>
+</html>
